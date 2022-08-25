@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <div id="root">
+
+    </div>
+    <script>
+        const props = {
+            id: 'div-react',
+            children: 'DIV criada com React',
+            style: { border: '2px solid blue', backgroundColor: 'pink'}
+        }
+        const novaDiv = React.createElement('div', props)
+
+     
+
+        const botao = React.createElement('button', {
+            id: 'novoBtn',
+            style: { color: 'red', backgroundColor: 'yellow'},
+            children: 'Clique aqui',
+            onClick: () => alert('Olá!')
+        })
+
+        const parag = React.createElement('p', null, 'Isto é um parágrafo. ')
+
+        const container = React.createElement('div', {id: 'container'},
+         [novaDiv,
+         botao,
+         parag
+        ])
+
+
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(container)
+
+    </script>
+
+</body>
+</html>
